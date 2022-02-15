@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -335,6 +337,23 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  /*font-size: 15px;
+  font-weight: 400;*/
+}
+
+header p {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 3.9rem;
+  text-align: center;
+  margin: 35px 0 20px 0;
+}
+
+.location {
+  background-color: #eaeaea;
 }
 
 /*# sourceMappingURL=style.css.map */
