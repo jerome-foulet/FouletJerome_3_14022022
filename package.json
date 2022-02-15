@@ -1,0 +1,24 @@
+{
+  "name": "p3_foulet_code",
+  "version": "1.0.0",
+  "description": "[OC] Project 3 : Ohmyfood! Paris",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jerome-foulet/FouletJerome_3_14022022.git"
+  },
+  "keywords": [
+    "OC",
+    "P3",
+    "Ohmyfood!"
+  ],
+  "author": "Jérôme FOULET",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerome-foulet/FouletJerome_3_14022022/issues"
+  },
+  "homepage": "https://github.com/jerome-foulet/FouletJerome_3_14022022#readme"
+}
