@@ -1,0 +1,5 @@
+@use 'variables' as *;
+
+@mixin padding-main {
+    padding: 0 $padding-main 0 $padding-main;
+}
