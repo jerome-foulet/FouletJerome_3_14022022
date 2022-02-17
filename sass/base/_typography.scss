@@ -19,6 +19,12 @@ header {
         font-size: 3.90rem;
         font-weight: 400;
     }
+
+    &.--with-home-link {
+        a {
+            color: black;
+        }
+    }
 }
 
 .presentation {
@@ -47,11 +53,49 @@ header {
     }
 }
 
+.restaurant {
+    &__title {
+        h1 {
+            font-family: 'Shrikhand', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+        }
+        i {
+            font-size: 4rem;
+        }
+        
+    }
+    &__menu {
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+        }
+    }
+
+    .dishe {
+        &__description {
+            &--complement p {
+                font-weight: 400;
+                &.ellipsis {
+                    text-overflow: ellipsis;
+                    white-space:nowrap;
+                    overflow: hidden;
+                }
+            }
+        }
+        &__check {
+            color: white;
+            font-size: 2.5rem;
+        }
+    }
+}
+
 /** Components **/
 
 .button {
     color: white;
     font-weight: 400;
+    text-align: center;
     text-decoration: none;
 }
 

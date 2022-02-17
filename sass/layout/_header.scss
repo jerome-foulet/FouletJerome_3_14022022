@@ -4,4 +4,15 @@ header {
 
         margin: 40px 0 20px 0;
     }
+
+    &.--with-home-link {
+        position: relative;
+
+        a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 30px;
+        }
+    }
 }
