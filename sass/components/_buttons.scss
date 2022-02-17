@@ -8,5 +8,9 @@
     border-radius: 50px;
     box-shadow: 0 10px 10px 0 $color-shadow;
     margin: 0 auto;
-    padding: 33px 0 33px 0;
+    padding: 33px;
+
+    &:hover {
+        filter: brightness(125%);
+    }
 }

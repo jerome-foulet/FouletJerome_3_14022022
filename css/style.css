@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -345,23 +353,74 @@ body {
   font-weight: 700;
 }
 
+/** Layout **/
+h1 {
+  font-size: 3.1rem;
+  font-weight: 900;
+}
+
 header h1 {
   font-family: "Shrikhand", sans-serif;
   font-size: 3.9rem;
   font-weight: 400;
 }
 
-.presentation h1 {
-  font-size: 3rem;
-  font-weight: 900;
-}
 .presentation p {
   font-size: 2.2rem;
   font-weight: 400;
 }
 
+.manual li i {
+  color: #7e7e7e;
+  font-size: 2.6rem;
+}
+.manual li::before {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+.manual li:hover i {
+  color: #9356DC;
+}
+
+/** Components **/
 .button {
   color: white;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.restaurant-card .new {
+  color: #278870;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.restaurant-card a {
+  color: black;
+  text-decoration: none;
+}
+.restaurant-card__description--left h2, .restaurant-card__description--left p {
+  font-size: 2.3rem;
+}
+.restaurant-card__description--left p {
+  font-weight: 400;
+}
+.restaurant-card__description--right {
+  font-size: 4rem;
+  text-align: end;
+}
+
+footer {
+  color: white;
+}
+footer p {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+footer a {
+  color: white;
+  font-size: 2rem;
   font-weight: 400;
   text-decoration: none;
 }
@@ -378,6 +437,7 @@ header h1 {
   gap: 33px;
   background-color: #eaeaea;
   box-shadow: inset 0 15px 10px -10px #cfcfcf;
+  padding-top: 4px;
 }
 
 .presentation {
@@ -387,7 +447,7 @@ header h1 {
   padding-bottom: 115px;
 }
 .presentation h1 {
-  padding: 48px 80px 0 80px;
+  padding: 50px 80px 0 80px;
 }
 .presentation p {
   padding-bottom: 28px;
@@ -395,6 +455,72 @@ header h1 {
 
 .manual {
   padding: 0 40px 0 40px;
+  padding-top: 65px;
+}
+.manual ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  list-style-type: none;
+  margin-top: 60px;
+  padding: 0;
+}
+.manual li {
+  width: 100%;
+  background-color: #f6f6f6;
+  border-radius: 45px;
+  box-shadow: 0 10px 30px 0 #cfcfcf;
+  counter-increment: list;
+  padding: 60px;
+  padding-left: 170px;
+}
+.manual li i {
+  position: absolute;
+  left: 120px;
+}
+.manual li::before {
+  content: counter(list);
+  position: absolute;
+  left: 18px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  padding: 0.4rem 0.9rem;
+}
+.manual li:hover {
+  background-color: #f2eafb;
+}
+
+.restaurants {
+  padding: 0 40px 0 40px;
+  background-color: #f6f6f6;
+  margin-top: 138px;
+  padding-bottom: 125px;
+  padding-top: 80px;
+}
+.restaurants__list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 45px;
+}
+
+footer {
+  padding: 0 40px 0 40px;
+  background-color: #353535;
+  padding-top: 25px;
+}
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  padding-bottom: 20px;
+}
+footer ul i {
+  display: block;
+  width: 60px;
 }
 
 .button {
@@ -404,7 +530,58 @@ header h1 {
   border-radius: 50px;
   box-shadow: 0 10px 10px 0 #cfcfcf;
   margin: 0 auto;
-  padding: 33px 0 33px 0;
+  padding: 33px;
+}
+.button:hover {
+  filter: brightness(125%);
+}
+
+.restaurant-card {
+  height: 520px;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px 0 #cfcfcf;
+  overflow: hidden;
+}
+.restaurant-card img {
+  height: 356px;
+  width: 100%;
+  object-fit: cover;
+}
+.restaurant-card .new {
+  background-color: #99E2D0;
+  border-radius: 5px;
+  margin-top: 25px;
+  margin-right: 25px;
+  padding: 13px 25px;
+  position: absolute;
+  right: 40px;
+}
+.restaurant-card__description {
+  height: 164px;
+  display: flex;
+  align-items: center;
+}
+.restaurant-card__description--left {
+  width: 100%;
+  padding-left: 25px;
+}
+.restaurant-card__description--left h2, .restaurant-card__description--left p {
+  margin: 0;
+}
+.restaurant-card__description--left p {
+  padding-top: 10px;
+}
+.restaurant-card__description--right {
+  width: 100%;
+  padding-right: 40px;
+}
+.restaurant-card__description--right i:hover:before {
+  font-weight: 900;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(-5deg, #FF79DA, #9356DC);
+  -webkit-text-fill-color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */

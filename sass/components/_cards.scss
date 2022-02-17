@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+
+.restaurant-card {
+    height: 520px;
+
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px 0 $color-shadow;
+    overflow: hidden;
+
+    img {
+        height: 356px;
+        width: 100%;
+
+        object-fit: cover;
+    }
+
+    .new {
+        background-color: $color-tertiary;
+        border-radius: 5px;
+        margin-top: 25px;
+        margin-right: 25px;
+        padding: 13px 25px;
+        position: absolute;
+        right: 40px;
+    }
+
+    &__description {
+        height: 520-356px;
+        display: flex;
+        align-items: center;
+
+        &--left {
+            width: 100%;
+
+            padding-left: 25px;
+
+            h2, p {
+                margin: 0;
+            }
+        
+            p {
+                padding-top: 10px;
+            }
+        }
+
+        &--right {
+            width: 100%;
+            padding-right: 40px;
+
+            i:hover:before {
+                //transition: all 0 ease-in-out;
+                font-weight: 900;
+                -webkit-background-clip: text;
+                background-image: linear-gradient(-5deg, $color-secondary, $color-primary);
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        
+    }
+}
