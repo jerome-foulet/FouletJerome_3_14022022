@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}

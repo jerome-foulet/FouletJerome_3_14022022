@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+footer {
+    @include padding-main;
+
+    background-color: $color-background-footer;
+    padding-top: 25px;
+
+    ul {
+        list-style-type: none;
+
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding-bottom: 20px;
+        }
+
+        i {
+            display: block;
+            width: 60px;
+        }
+    }
+
+}
