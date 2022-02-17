@@ -99,6 +99,8 @@
     
     &__illustration {
         width: 100%;
+        max-height: 512px;
+        object-fit: cover;
     }
     &__title {
         display: flex;

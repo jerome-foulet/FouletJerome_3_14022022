@@ -82,6 +82,11 @@ header {
                     overflow: hidden;
                 }
             }
+            & h3 {
+                text-overflow: ellipsis;
+                white-space:nowrap;
+                overflow: hidden;
+            }
         }
         &__check {
             color: white;
