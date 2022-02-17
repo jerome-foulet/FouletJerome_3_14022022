@@ -568,6 +568,13 @@ header.--with-home-link a {
   padding: 42px 45px 0 45px;
   margin-bottom: -105px;
 }
+.restaurant__title i:hover:before {
+  font-weight: 900;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(-5deg, #FF79DA, #9356DC);
+  -webkit-text-fill-color: transparent;
+}
 .restaurant__menu h2 {
   padding: 40px 45px 0 45px;
 }
