@@ -365,6 +365,10 @@ header h1 {
   font-size: 3.9rem;
   font-weight: 400;
 }
+header h1 a {
+  color: black;
+  text-decoration: none;
+}
 header.--with-home-link a {
   color: black;
 }
@@ -557,6 +561,48 @@ footer ul i {
   -webkit-text-fill-color: transparent;
 }
 
+.dishe {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px 0 #cfcfcf;
+  margin-bottom: 30px;
+}
+.dishe__description {
+  flex: 1;
+  min-width: 0;
+  padding: 25px 0 25px 20px;
+}
+.dishe__description--complement {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-right: 50px;
+}
+.dishe__check {
+  flex: 0.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  border-radius: 0 30px 30px 0;
+  display: none;
+}
+.dishe:hover .dishe__check {
+  display: flex;
+}
+.dishe p, .dishe h3 {
+  margin: 0;
+}
+.dishe h3 {
+  padding-right: 150px;
+}
+.dishe p {
+  padding-right: 15px;
+}
+
 .home .location {
   display: flex;
   justify-content: center;
@@ -588,17 +634,21 @@ footer ul i {
   align-items: center;
   gap: 50px;
   list-style-type: none;
+  margin-left: 23px;
   margin-top: 60px;
   padding: 0;
 }
 .home .manual li {
+  counter-increment: list;
   width: 100%;
   background-color: #f6f6f6;
   border-radius: 45px;
   box-shadow: 0 10px 30px 0 #cfcfcf;
-  counter-increment: list;
   padding: 60px;
   padding-left: 170px;
+}
+.home .manual li:hover {
+  background-color: #f2eafb;
 }
 .home .manual li i {
   position: absolute;
@@ -607,13 +657,10 @@ footer ul i {
 .home .manual li::before {
   content: counter(list);
   position: absolute;
-  left: 18px;
+  left: 40px;
   background-color: #9356DC;
   border-radius: 50%;
   padding: 0.4rem 0.9rem;
-}
-.home .manual li:hover {
-  background-color: #f2eafb;
 }
 .home .restaurants {
   padding: 0 40px 0 40px;
@@ -673,41 +720,6 @@ footer ul i {
 }
 .restaurant .dishes-list {
   padding: 0 30px 0 30px;
-}
-.restaurant .dishe {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  background-color: white;
-  border-radius: 30px;
-  box-shadow: 0 10px 30px 0 #cfcfcf;
-  margin-bottom: 30px;
-}
-.restaurant .dishe__description {
-  flex: 1;
-  min-width: 0;
-  padding: 25px 0 25px 20px;
-}
-.restaurant .dishe__description--complement {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  padding-right: 50px;
-}
-.restaurant .dishe__check {
-  flex: 0.2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #99E2D0;
-  border-radius: 0 30px 30px 0;
-  display: none;
-}
-.restaurant .dishe p, .restaurant .dishe h3 {
-  margin: 0;
-}
-.restaurant .dishe:hover .dishe__check {
-  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */
