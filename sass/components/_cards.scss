@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .restaurant-card {
-    height: 520px;
+    //height: 520px;
 
     background-color: white;
     border-radius: 30px;
@@ -31,6 +31,7 @@
         align-items: center;
 
         &--left {
+            flex: 1;
             width: 100%;
 
             padding-left: 25px;
@@ -45,7 +46,9 @@
         }
 
         &--right {
+            flex: 0.2;
             width: 100%;
+
             padding-right: 40px;
 
             i:hover:before {

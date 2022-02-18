@@ -13,6 +13,8 @@ h1 {
     font-weight: 900;
 }
 
+/** Header **/
+
 header {
     h1 {
         font-family: 'Shrikhand', sans-serif;
@@ -26,6 +28,8 @@ header {
         }
     }
 }
+
+/** Home **/
 
 .presentation {
     p {
@@ -52,6 +56,8 @@ header {
         }
     }
 }
+
+/** Restaurant **/
 
 .restaurant {
     &__title {
@@ -133,6 +139,8 @@ header {
         }
     }
 }
+
+/** Footer **/
 
 footer {
     color: white;
