@@ -1,8 +1,6 @@
 @use '../abstracts' as *;
 
 .restaurant-card {
-    height: 520px;
-
     background-color: white;
     border-radius: 30px;
     box-shadow: 0 10px 30px 0 $color-shadow;
@@ -31,6 +29,7 @@
         align-items: center;
 
         &--left {
+            flex: 1;
             width: 100%;
 
             padding-left: 25px;
@@ -45,11 +44,12 @@
         }
 
         &--right {
+            flex: 0.2;
             width: 100%;
+
             padding-right: 40px;
 
             i:hover:before {
-                //transition: all 0 ease-in-out;
                 font-weight: 900;
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -58,5 +58,57 @@
             }
         }
         
+    }
+}
+
+.dishe {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px 0 $color-shadow;
+    margin-bottom: 30px;
+
+    &__description {
+        flex: 1;
+        min-width: 0;
+        padding: 25px 0 25px 20px;
+        &--complement {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 10px;
+            padding-right: 50px;
+        }
+    }
+
+    &__check {
+        flex: 0.2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: $color-tertiary;
+        border-radius: 0 30px 30px 0;
+
+        display: none;
+    }
+
+    &:hover &__check {
+        display: flex;
+    }
+
+    p, h3 {
+        margin: 0;
+    }
+
+    h3 {
+        padding-right: 150px;
+    }
+
+    p {
+        padding-right: 15px;
     }
 }
