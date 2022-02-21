@@ -1,0 +1,26 @@
+@keyframes load-loader-container {
+    from,99% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@keyframes rotate-loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dishes-loader {
+    from {
+        opacity: 0;
+        transform: translate(0, 20px);
+    }
+    80% {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
