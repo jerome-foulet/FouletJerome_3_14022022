@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: 700;
 }
 
@@ -82,28 +82,6 @@ header {
             font-weight: 400;
         }
     }
-
-    .dishe {
-        &__description {
-            &--complement p {
-                font-weight: 400;
-                &.ellipsis {
-                    text-overflow: ellipsis;
-                    white-space:nowrap;
-                    overflow: hidden;
-                }
-            }
-            & h3 {
-                text-overflow: ellipsis;
-                white-space:nowrap;
-                overflow: hidden;
-            }
-        }
-        &__check {
-            color: white;
-            font-size: 2.5rem;
-        }
-    }
 }
 
 /** Components **/
@@ -142,6 +120,28 @@ header {
             font-size: 4rem;
             text-align: end;
         }
+    }
+}
+
+.dishe {
+    &__description {
+        &--complement p {
+            font-weight: 400;
+            &.ellipsis {
+                text-overflow: ellipsis;
+                white-space:nowrap;
+                overflow: hidden;
+            }
+        }
+        & h3 {
+            text-overflow: ellipsis;
+            white-space:nowrap;
+            overflow: hidden;
+        }
+    }
+    &__check {
+        color: white;
+        font-size: 2.5rem;
     }
 }
 

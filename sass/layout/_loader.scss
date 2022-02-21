@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    // Both can be put on animation "to" with forwards
+    // but animation appear if commented so for surprise ;)
+    opacity: 0;
+    z-index: -1;
+    animation: load-loader-container $loader-time;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loader-to-animate {
+    width: 100px;
+    height: 100px;
+    position: relative;
+
+    :hover {
+        animation-play-state: paused;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        animation: rotate-loader 2s ease-in-out 2;
+
+        border: 4px solid transparent;
+        border-radius: 50%;
+        margin-top: 5px;
+    }
+    
+    > div {
+        border-top-color: $color-primary;
+        > div {
+            border-top-color: $color-secondary;
+            > div {
+                border-top-color: $color-tertiary;
+            }
+        }
+    }
+}
