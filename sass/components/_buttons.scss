@@ -2,13 +2,13 @@
 
 .button {
     display: block;
-    width: 65%;
+    width: 70%;
 
     background: linear-gradient(-5deg, $color-primary, $color-secondary);
     border-radius: 50px;
     box-shadow: 0 10px 10px 0 $color-shadow;
     margin: 0 auto;
-    padding: 33px;
+    padding: 0.8rem;
 
     &:hover {
         filter: brightness(125%);

@@ -3,11 +3,11 @@
 .restaurant {
 
     background-color: $color-background-bloc;
-    padding-bottom: 120px;
+    padding-bottom: 3.5rem;
     
     &__illustration {
         width: 100%;
-        max-height: 512px;
+        height: 14rem;
         object-fit: cover;
     }
     &__title {
@@ -15,15 +15,14 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        top: -72px;
+        top: -2.3rem;
 
         background-color: $color-background-bloc;
-        border-radius: 70px;
-        padding: 42px 45px 0 45px;
-        margin-bottom: -105px;
+        border-radius: 2.2rem;
+        padding: 1rem 1.5rem 0 1rem;
+        margin-bottom: -3.3rem;
 
         i:hover:before {
-            //transition: all 0 ease-in-out;
             font-weight: 900;
             background-clip: text;
             -webkit-background-clip: text;
@@ -33,26 +32,26 @@
     }
     &__menu {
         h2 {
-            padding: 40px 45px 0 45px;
+            padding: 1rem 1rem 0 1rem;
         }
 
         h2:after {
             content: '';
             display:block;
-            border-bottom: solid 5px $color-tertiary;
-            transform: scaleX(0.125);
+            border-bottom: solid 0.2em $color-tertiary;
+            transform: scaleX(0.15);
             transform-origin: 0% 0%;
-            padding-top: 10px;
+            padding-top: 0.2rem;
         }
 
         .button {
-            margin-top: 80px;
+            margin-top: 2.2rem;
             max-width: 55%;
         }
     }
 
     .dishes-list {
-        padding: 0 30px 0 30px;
+        padding: 0 1rem 0 1rem;
     }
     
 }

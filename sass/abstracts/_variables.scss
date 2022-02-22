@@ -15,8 +15,15 @@ $color-shadow: #cfcfcf;
 
 $button-lighten-coef: 5;
 
-$padding-main: 40px;
+$padding-main: 1rem;
 
-$loader-time: 4s; 
+$loader-time: 4s;
 
 $dishe-animation-delay: 200ms;
+
+$breakpoints: (
+    small: 576px, // landscape phones
+    medium: 768px, // tablets
+    large: 992px, // desktops
+    extra-large: 1200px, //large desktops
+);
