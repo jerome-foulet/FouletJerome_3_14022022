@@ -2,12 +2,13 @@
 
 .restaurant-card {
     background-color: white;
-    border-radius: 30px;
-    box-shadow: 0 10px 30px 0 $color-shadow;
+    border-radius: 1rem;
+    box-shadow: 0 0.1rem 30px 0 $color-shadow;
     overflow: hidden;
+    position: relative;
 
     img {
-        height: 356px;
+        height: 9.3rem;
         width: 100%;
 
         object-fit: cover;
@@ -15,39 +16,37 @@
 
     .new {
         background-color: $color-tertiary;
-        border-radius: 5px;
-        margin-top: 25px;
-        margin-right: 25px;
-        padding: 13px 25px;
+        border-radius: 0.1rem;
+        padding: 0.35rem 0.7rem;
         position: absolute;
-        right: 40px;
+        margin: 0;
+        right: 0.7rem;
+        top: 0.7rem;
     }
 
     &__description {
-        height: 520-356px;
         display: flex;
         align-items: center;
+        padding: 0.6rem 0 0.7rem 0;
 
         &--left {
             flex: 1;
-            width: 100%;
 
-            padding-left: 25px;
+            padding-left: 1rem;
 
             h2, p {
                 margin: 0;
             }
         
             p {
-                padding-top: 10px;
+                padding-top: 0.2rem;
             }
         }
 
         &--right {
             flex: 0.2;
-            width: 100%;
 
-            padding-right: 40px;
+            padding-right: 1.5rem;
 
             i:hover:before {
                 font-weight: 900;
@@ -67,9 +66,9 @@
     align-items: stretch;
 
     background-color: white;
-    border-radius: 30px;
-    box-shadow: 0 10px 30px 0 $color-shadow;
-    margin-bottom: 30px;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 30px 0 $color-shadow;
+    margin-bottom: 1rem;
 
     // For dishe animation
     animation: dishes-loader 1s ease-out 1 both;
@@ -85,47 +84,46 @@
     &__description {
         flex: 1;
         min-width: 0;
-        padding: 25px 0 25px 20px;
+        padding: 0.5rem 0 0.5rem 0.7rem;
         &--complement {
             display: flex;
             justify-content: space-between;
 
-            margin-top: 10px;
-            padding-right: 30px;
+            margin-top: 0.2rem;
+            padding-right: 0.2rem;
         }
     }
 
     &__check {
-        flex: 0.2;
+        flex: 0;
         display: flex;
         justify-content: center;
         align-items: center;
 
         background-color: $color-tertiary;
-        border-radius: 0 30px 30px 0;
 
-        display: none;
-        // For check animation
-        position: relative;
-        right: -112px;
-        transition: transform 500ms ease-in-out;
+        transform: translate(100%);
         i {
-            transform: rotate(-270deg) scale(1,1);
+            transform: rotate(-270deg);
             transition: transform 400ms 100ms ease-in-out;
         }
     }
 
     &:hover &__check {
-        display: flex;
-        // For check animation
-        transform: translate(-112px, 0);
         i {
             transform: rotate(0deg);
+        }
+        animation: dishe-check 500ms ease-out forwards alternate;
+        // check transition all avec les flex et translate
+    }
+
+    &:hover {
+        p, h3 {
+            padding-right: 1rem;
         }
     }
 
     p, h3 {
         margin: 0;
-        padding-right: 15px;
     }
 }

@@ -1,8 +1,10 @@
+@use '../abstracts' as *;
+
 header {
     h1 {
         text-align: center;
 
-        margin: 40px 0 20px 0;
+        margin: 1rem 0 0.5rem 0;
     }
 
     &.--with-home-link {
@@ -12,7 +14,7 @@ header {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: 30px;
+            left: 1.5rem;
         }
     }
 }

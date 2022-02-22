@@ -24,3 +24,14 @@
         transform: translate(0, 0);
     }
 }
+
+@keyframes dishe-check {
+    from {
+        flex: 0;
+        transform: translate(100%);
+    }
+    to {
+        flex: 0.2;
+        transform: translate(0);
+    }
+}
