@@ -14,3 +14,27 @@
         filter: brightness(125%);
     }
 }
+
+.fa-heart {
+    background-color: transparent;
+    display: inline-block;
+    transform: translateX(50%);
+    position: relative;
+
+    & > i {
+        display: inline-block;
+        transform: translateX(-100%);
+        opacity: 0;
+        position: absolute;
+
+        &:hover {
+            font-weight: 900;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-image: linear-gradient(-5deg, $color-secondary, $color-primary);
+            -webkit-text-fill-color: transparent;
+            transition: opacity 500ms ease-in;
+            opacity: 1;
+        }
+    }
+}

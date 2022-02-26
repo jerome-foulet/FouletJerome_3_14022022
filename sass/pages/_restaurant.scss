@@ -21,14 +21,6 @@
         border-radius: 2.2rem;
         padding: 1rem 1.5rem 0 1rem;
         margin-bottom: -3.3rem;
-
-        i:hover:before {
-            font-weight: 900;
-            background-clip: text;
-            -webkit-background-clip: text;
-            background-image: linear-gradient(-5deg, $color-secondary, $color-primary);
-            -webkit-text-fill-color: transparent;
-        }
     }
     &__menu {
         h2 {
@@ -52,6 +44,13 @@
 
     .dishes-list {
         padding: 0 1rem 0 1rem;
+        @include mq(large){
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 1rem;
+        }
     }
     
 }

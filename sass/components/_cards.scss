@@ -47,14 +47,6 @@
             flex: 0.2;
 
             padding-right: 1.5rem;
-
-            i:hover:before {
-                font-weight: 900;
-                background-clip: text;
-                -webkit-background-clip: text;
-                background-image: linear-gradient(-5deg, $color-secondary, $color-primary);
-                -webkit-text-fill-color: transparent;
-            }
         }
         
     }
@@ -80,6 +72,10 @@
 
     // For check animation
     overflow: hidden;
+
+    @include mq(large){
+        flex: 1 1 14rem;
+    }
 
     &__description {
         flex: 1;
@@ -114,7 +110,6 @@
             transform: rotate(0deg);
         }
         animation: dishe-check 500ms ease-out forwards alternate;
-        // check transition all avec les flex et translate
     }
 
     &:hover {
