@@ -39,24 +39,31 @@
         ul {
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 1.2rem;
             
             list-style-type: none;
             margin-left: 1rem;
             margin-top: 1.55rem;
             padding: 0;
+            @include mq(large){
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
         }
     
         li {
             counter-increment: list;
-            width: 100%;
     
             background-color: $color-background-bloc;
             border-radius: 45px;
             box-shadow: 0 10px 30px 0 $color-shadow;
             padding: 1.5rem;
             padding-left: 4rem;
+            position: relative;
+
+            @include mq(large){
+                flex: 2 1 auto;
+            }
 
             &:hover {
                 background-color: lighten($color-primary, 35);
@@ -64,13 +71,13 @@
 
             i {
                 position: absolute;
-                left: 4rem;
+                left: 2rem;
             }
     
             &::before {
                 content: counter(list);
                 position: absolute;
-                left: 1.5rem;
+                left: -0.5rem;
     
                 background-color: $color-primary;
                 border-radius: 50%;
@@ -93,6 +100,12 @@
             gap: 1rem;
     
             margin-top: 1.2rem;
+
+            @include mq(large){
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
         }
     }
     

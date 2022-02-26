@@ -8,6 +8,9 @@
     @include mq(medium){
         font-size: 2.35rem;
     }
+    @include mq(large){
+        font-size: 1.95rem;
+    }
 }
 
 body {
@@ -142,9 +145,15 @@ header {
 .dishe {
     &__description {
         font-size: 0.9rem;
+        @include mq(large){
+            font-size: 0.7rem;
+        }
         &--complement p {
             font-size: 0.8rem;
             font-weight: 400;
+            @include mq(large){
+                font-size: 0.7rem;
+            }
             &.ellipsis {
                 text-overflow: ellipsis;
                 white-space:nowrap;

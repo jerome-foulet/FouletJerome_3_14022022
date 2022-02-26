@@ -1,3 +1,5 @@
+@use '../abstracts/' as *;
+
 @keyframes load-loader-container {
     from,99% {
         opacity: 1;
