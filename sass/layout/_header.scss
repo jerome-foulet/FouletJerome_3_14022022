@@ -10,7 +10,7 @@ header {
     &.--with-home-link {
         position: relative;
 
-        a {
+        a :first-child {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
