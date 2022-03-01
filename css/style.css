@@ -598,7 +598,7 @@ header h1 {
 header.--with-home-link {
   position: relative;
 }
-header.--with-home-link a {
+header.--with-home-link a :first-child {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
