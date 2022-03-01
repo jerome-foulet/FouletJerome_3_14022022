@@ -60,6 +60,7 @@
             padding: 1.5rem;
             padding-left: 4rem;
             position: relative;
+            cursor: pointer;
 
             @include mq(large){
                 flex: 2 1 auto;

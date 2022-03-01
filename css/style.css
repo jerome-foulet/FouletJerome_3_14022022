@@ -669,6 +669,7 @@ footer ul i {
   box-shadow: 0 0.1rem 30px 0 #cfcfcf;
   overflow: hidden;
   position: relative;
+  flex: 1 1 13rem;
 }
 .restaurant-card img {
   height: 9.3rem;
@@ -814,6 +815,7 @@ footer ul i {
   padding: 1.5rem;
   padding-left: 4rem;
   position: relative;
+  cursor: pointer;
 }
 @media screen and (min-width: 992px) {
   .home .manual li {
