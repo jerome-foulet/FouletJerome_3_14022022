@@ -7,8 +7,8 @@
     width: 100%;
     height: 100%;
     background-color: white;
-    // Both can be put on animation "to" with forwards
-    // but animation appear if commented so for surprise ;)
+    /* Both (opacity anb z-index) can be put on animation "to" with forwards */
+    /* For on/off on animation it's better like this */
     opacity: 0;
     z-index: -1;
     animation: load-loader-container $loader-time;

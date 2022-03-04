@@ -47,7 +47,6 @@
             padding: 0;
             @include mq(large){
                 flex-direction: row;
-                flex-wrap: wrap;
             }
         }
     
@@ -63,7 +62,7 @@
             cursor: pointer;
 
             @include mq(large){
-                flex: 2 1 auto;
+                flex: 1 1 auto;
             }
 
             &:hover {
@@ -73,12 +72,16 @@
             i {
                 position: absolute;
                 left: 2rem;
+                top: 50%;
+                transform: translateY(-50%);
             }
     
             &::before {
                 content: counter(list);
                 position: absolute;
                 left: -0.5rem;
+                top: 50%;
+                transform: translateY(-50%);
     
                 background-color: $color-primary;
                 border-radius: 50%;
@@ -109,5 +112,4 @@
             }
         }
     }
-    
 }

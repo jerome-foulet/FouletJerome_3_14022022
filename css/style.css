@@ -362,7 +362,12 @@ template {
 }
 @media screen and (min-width: 992px) {
   :root, html {
-    font-size: 1.95rem;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  :root, html {
+    font-size: 1.3rem;
   }
 }
 
@@ -372,13 +377,13 @@ body {
   font-weight: 700;
 }
 
-/** Layout **/
-h1 {
+/* Layout */
+h2 {
   font-size: 1.3rem;
   font-weight: 900;
 }
 
-/** Header **/
+/* Header */
 header h1 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.6rem;
@@ -388,11 +393,11 @@ header h1 a {
   color: black;
   text-decoration: none;
 }
-header.--with-home-link a {
+header.header--with-home-link a {
   color: black;
 }
 
-/** Home **/
+/* Home */
 .location {
   font-size: 0.9rem;
 }
@@ -417,7 +422,7 @@ header.--with-home-link a {
   color: #9356DC;
 }
 
-/** Restaurant **/
+/* Restaurant */
 .restaurant__title h1 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.4rem;
@@ -431,7 +436,7 @@ header.--with-home-link a {
   font-weight: 400;
 }
 
-/** Components **/
+/* Components */
 .button {
   color: white;
   font-size: 0.9rem;
@@ -492,7 +497,7 @@ header.--with-home-link a {
   font-size: 1rem;
 }
 
-/** Footer **/
+/* Footer */
 footer {
   color: white;
 }
@@ -531,16 +536,6 @@ footer a {
     transform: translate(0, 0);
   }
 }
-@keyframes dishe-check {
-  from {
-    flex: 0;
-    transform: translate(100%);
-  }
-  to {
-    flex: 0.2;
-    transform: translate(0);
-  }
-}
 .loader-container {
   position: fixed;
   top: 0;
@@ -548,6 +543,8 @@ footer a {
   width: 100%;
   height: 100%;
   background-color: white;
+  /* Both (opacity anb z-index) can be put on animation "to" with forwards */
+  /* For on/off on animation it's better like this */
   opacity: 0;
   z-index: -1;
   animation: load-loader-container 4s;
@@ -595,10 +592,10 @@ header h1 {
   text-align: center;
   margin: 1rem 0 0.5rem 0;
 }
-header.--with-home-link {
+header.header--with-home-link {
   position: relative;
 }
-header.--with-home-link a :first-child {
+header.header--with-home-link a :first-child {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -638,7 +635,8 @@ footer ul i {
   padding: 0.8rem;
 }
 .button:hover {
-  filter: brightness(125%);
+  /* Remove shadow ?? => filter: brightness(125%); */
+  background: linear-gradient(-5deg, #ae80e5, #fface8);
 }
 
 .fa-heart {
@@ -669,7 +667,16 @@ footer ul i {
   box-shadow: 0 0.1rem 30px 0 #cfcfcf;
   overflow: hidden;
   position: relative;
-  flex: 1 1 13rem;
+}
+@media screen and (min-width: 992px) {
+  .restaurant-card {
+    flex-basis: 48%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurant-card {
+    flex-basis: 23%;
+  }
 }
 .restaurant-card img {
   height: 9.3rem;
@@ -706,15 +713,14 @@ footer ul i {
 }
 
 .dishe {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
+  overflow: hidden;
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 0.2rem 30px 0 #cfcfcf;
   margin-bottom: 1rem;
+  position: relative;
+  /* For dishe animation */
   animation: dishes-loader 1s ease-out 1 both;
-  overflow: hidden;
 }
 .dishe:nth-child(2) {
   animation-delay: 200ms;
@@ -725,15 +731,10 @@ footer ul i {
 .dishe:nth-child(4) {
   animation-delay: 600ms;
 }
-@media screen and (min-width: 992px) {
-  .dishe {
-    flex: 1 1 14rem;
-  }
-}
 .dishe__description {
-  flex: 1;
-  min-width: 0;
+  width: 96%;
   padding: 0.5rem 0 0.5rem 0.7rem;
+  transition: width 1s ease-in-out;
 }
 .dishe__description--complement {
   display: flex;
@@ -741,29 +742,45 @@ footer ul i {
   margin-top: 0.2rem;
   padding-right: 0.2rem;
 }
+.dishe__description--complement p:nth-child(2) {
+  margin-left: 2rem;
+}
+.dishe__description h3 {
+  margin-right: 3.2rem;
+}
+.dishe:hover .dishe__description {
+  width: calc(96% - 3rem);
+  transition: width 1s ease-in-out;
+}
 .dishe__check {
-  flex: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 3rem;
+  height: 100%;
   background-color: #99E2D0;
+  position: absolute;
+  top: 0;
+  right: 0;
   transform: translate(100%);
+  transition: all 1s ease-in-out;
 }
 .dishe__check i {
+  padding: 0 1rem 0 1rem;
   transform: rotate(-270deg);
-  transition: transform 400ms 100ms ease-in-out;
+  transition: transform 800ms ease-in-out;
 }
 .dishe:hover .dishe__check {
-  animation: dishe-check 500ms ease-out forwards alternate;
+  transform: translate(0);
+  transition: all 1s ease-in-out;
 }
 .dishe:hover .dishe__check i {
   transform: rotate(0deg);
-}
-.dishe:hover p, .dishe:hover h3 {
-  padding-right: 1rem;
+  transition: transform 800ms 200ms ease-in-out;
 }
 .dishe p, .dishe h3 {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .home .location {
@@ -804,7 +821,6 @@ footer ul i {
 @media screen and (min-width: 992px) {
   .home .manual ul {
     flex-direction: row;
-    flex-wrap: wrap;
   }
 }
 .home .manual li {
@@ -819,7 +835,7 @@ footer ul i {
 }
 @media screen and (min-width: 992px) {
   .home .manual li {
-    flex: 2 1 auto;
+    flex: 1 1 auto;
   }
 }
 .home .manual li:hover {
@@ -828,11 +844,15 @@ footer ul i {
 .home .manual li i {
   position: absolute;
   left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .home .manual li::before {
   content: counter(list);
   position: absolute;
   left: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #9356DC;
   border-radius: 50%;
   padding: 0.2rem 0.4rem;
@@ -878,6 +898,15 @@ footer ul i {
   padding: 1rem 1.5rem 0 1rem;
   margin-bottom: -3.3rem;
 }
+@media screen and (min-width: 1200px) {
+  .restaurant__menu--list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .restaurant__menu--list section {
+    width: 33%;
+  }
+}
 .restaurant__menu h2 {
   padding: 1rem 1rem 0 1rem;
 }
@@ -885,8 +914,7 @@ footer ul i {
   content: "";
   display: block;
   border-bottom: solid 0.2em #99E2D0;
-  transform: scaleX(0.15);
-  transform-origin: 0% 0%;
+  width: 2.7rem;
   padding-top: 0.2rem;
 }
 .restaurant__menu .button {
@@ -894,16 +922,8 @@ footer ul i {
   max-width: 55%;
 }
 .restaurant .dishes-list {
+  flex: 2 1 auto;
   padding: 0 1rem 0 1rem;
-}
-@media screen and (min-width: 992px) {
-  .restaurant .dishes-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1rem;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

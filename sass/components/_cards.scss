@@ -6,7 +6,14 @@
     box-shadow: 0 0.1rem 30px 0 $color-shadow;
     overflow: hidden;
     position: relative;
-    flex: 1 1 13rem;
+
+    @include mq(large) {
+        flex-basis: 48%;
+    }
+
+    @include mq(extra-large) {
+        flex-basis: 23%;
+    }
 
     img {
         height: 9.3rem;
@@ -48,22 +55,20 @@
             flex: 0.2;
 
             padding-right: 1.5rem;
-        }
-        
+        }  
     }
 }
 
 .dishe {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-
+    overflow: hidden;
+    
     background-color: white;
     border-radius: 1rem;
     box-shadow: 0 0.2rem 30px 0 $color-shadow;
     margin-bottom: 1rem;
+    position: relative;
 
-    // For dishe animation
+    /* For dishe animation */
     animation: dishes-loader 1s ease-out 1 both;
     @for $i from 1 to 4 {
         &:nth-child(#{$i+1}) {
@@ -71,55 +76,68 @@
         }
     }
 
-    // For check animation
-    overflow: hidden;
-
-    @include mq(large){
-        flex: 1 1 14rem;
-    }
-
     &__description {
-        flex: 1;
-        min-width: 0;
+        width: 96%;
+
         padding: 0.5rem 0 0.5rem 0.7rem;
+        transition: width 1s ease-in-out;
+
         &--complement {
             display: flex;
             justify-content: space-between;
 
             margin-top: 0.2rem;
             padding-right: 0.2rem;
+
+            p:nth-child(2) {
+                margin-left: 2rem;
+            }
+        }
+
+        h3 {
+            margin-right: 3.2rem;
         }
     }
 
+    &:hover &__description {
+        width: calc(96% - 3rem);
+
+        transition: width 1s ease-in-out;
+    }
+
     &__check {
-        flex: 0;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 3rem;
+        height: 100%;
 
         background-color: $color-tertiary;
-
+        position: absolute;
+        top: 0;
+        right: 0;
         transform: translate(100%);
+        transition: all 1s ease-in-out;
+
         i {
+            padding: 0 1rem 0 1rem;
             transform: rotate(-270deg);
-            transition: transform 400ms 100ms ease-in-out;
+            transition: transform 800ms ease-in-out;
         }
     }
 
     &:hover &__check {
+        transform: translate(0);
+        transition: all 1s ease-in-out;
+
         i {
             transform: rotate(0deg);
-        }
-        animation: dishe-check 500ms ease-out forwards alternate;
-    }
-
-    &:hover {
-        p, h3 {
-            padding-right: 1rem;
+            transition: transform 800ms 200ms ease-in-out;
         }
     }
 
     p, h3 {
-        margin: 0;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
