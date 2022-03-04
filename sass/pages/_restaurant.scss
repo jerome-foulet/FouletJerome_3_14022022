@@ -23,6 +23,17 @@
         margin-bottom: -3.3rem;
     }
     &__menu {
+        @include mq(extra-large){
+            &--list {
+                display: flex;
+                justify-content: space-between;
+
+                section {
+                    width: 33%;
+                }
+            }
+        }
+
         h2 {
             padding: 1rem 1rem 0 1rem;
         }
@@ -31,8 +42,7 @@
             content: '';
             display:block;
             border-bottom: solid 0.2em $color-tertiary;
-            transform: scaleX(0.15);
-            transform-origin: 0% 0%;
+            width: 2.7rem;
             padding-top: 0.2rem;
         }
 
@@ -43,14 +53,8 @@
     }
 
     .dishes-list {
+        flex: 2 1 auto;
         padding: 0 1rem 0 1rem;
-        @include mq(large){
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            gap: 1rem;
-        }
     }
     
 }

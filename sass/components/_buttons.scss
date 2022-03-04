@@ -11,7 +11,8 @@
     padding: 0.8rem;
 
     &:hover {
-        filter: brightness(125%);
+        /* Remove shadow ?? => filter: brightness(125%); */
+        background: linear-gradient(-5deg, lighten($color-primary, 10%), lighten($color-secondary, 10%));
     }
 }
 
