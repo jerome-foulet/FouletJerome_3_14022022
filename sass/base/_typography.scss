@@ -114,6 +114,15 @@ header {
     text-decoration: none;
 }
 
+.fa-heart {
+    color: black;
+
+    &:hover {
+        transition: color 500ms ease-in;
+        color: transparent;
+    }
+}
+
 .restaurant-card {
     .new {
         color: darken($color-tertiary, 40);
