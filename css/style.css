@@ -445,6 +445,14 @@ header.header--with-home-link a {
   text-decoration: none;
 }
 
+.fa-heart {
+  color: black;
+}
+.fa-heart:hover {
+  transition: color 500ms ease-in;
+  color: transparent;
+}
+
 .restaurant-card .new {
   color: #278870;
   font-size: 0.8rem;
